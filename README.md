@@ -14,6 +14,7 @@
 - 目标中心点计算
 - 左 / 中 / 右位置判断
 - 后续小车转向控制
+- 接入AI模型，实现自动化控制
 
 ---
 
@@ -30,14 +31,21 @@
 ## 项目结构
 
 ```text
-smart-car-project/
-├── vision/          # 摄像头识别相关代码
-├── control/         # 小车电机控制代码
-├── docs/            # 文档、笔记、进度记录
-├── tests/           # 测试图片、视频、截图
-├── README.md        # 项目说明
-├── requirements.txt # Python 依赖
-└── .gitignore       # 忽略文件
+car-project/
+├── src/
+│   ├── car_run.py           主线程序（视觉+控制）
+│   ├── motor_test.py        电机独立测试
+│   └── vision_debug.py      视觉调试版
+├── docs/
+│   ├── README.md            项目总览
+│   ├── 硬件接线图.md         引脚表+接线说明
+│   ├── 调试日志.md           每次测试记录
+│   └── 技术决策记录.md       为什么选 Python
+├── assets/
+│   ├── demo.mp4             小车运行演示视频
+│   └── wiring.png           接线照片
+├── requirements.txt         opencv-python, RPi.GPIO, numpy
+└── README.md
 ```
 
 ---
